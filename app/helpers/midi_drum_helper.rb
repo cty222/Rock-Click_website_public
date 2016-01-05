@@ -1,0 +1,2 @@
+module MidiDrumHelper
+end

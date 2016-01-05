@@ -1,0 +1,573 @@
+<div class="row">
+	<div class="row">
+		<h3 class="col-md-4">
+			<%="BPM #{t('value')}(#{t('min')}:#{@bpm_min} #{t('max')}:#{@bpm_max})"%>
+		</h3>
+		<br/>
+		<div class="col-md-4">
+			<input type="number" class="form-control" name="BPM" min="<%= @bpm_min %>" max="<%= @bpm_max %>" value="<%= @default_bpm %>" id="bpm_value">
+		</div>
+	</div>
+	<div class="row">
+		<h3 class="col-md-4"><%="#{t('Hi-hats')} #{t('volume')}(#{t('min')}:0 #{t('max')}:10)"%></h3>
+		<br/>
+		<div class="col-md-4">
+			<input type="range" class="hh_volume" min="0" max="10" value="5">
+		</div>
+	</div>
+	<div class="row">
+		<h3 class="col-md-4"><%="#{t('Snare')} #{t('volume')}(#{t('min')}:0 #{t('max')}:10)"%></h3>
+		<br/>
+		<div class="col-md-4">
+			<input type="range" class="sn_volume" min="0" max="10" value="5">
+		</div>
+	</div>
+	<div class="row">
+		<h3 class="col-md-4"><%="#{t('Bass drum')} #{t('volume')}(#{t('min')}:0 #{t('max')}:10)"%></h3>
+		<br/>
+		<div class="col-md-4">
+			<input type="range" class="bd_volume" min="0" max="10" value="5">
+		</div>
+	</div>
+</div>
+<div class="row">
+	<br/>
+	<div class="col-xs-12">
+		<input type="button" value="<%=t('play')%>" class="btn btn-info play_audio col-xs-12">
+	</div>
+</div>
+<hr/>
+<div class ="row">
+	<div class="row">
+		<div class = "col-md-1">
+			<h4>4/4</h4>
+		</div>
+		<div class = "col-md-11">
+			<div class = "col-xs-12 visible-xs-block">
+				<div class = "col-xs-3">
+					<h4 style="color:#ffffff">n</h4>
+				</div>
+				<div class = "col-xs-3">
+					<h4 style="color:#ffffff">e</h4>
+				</div>
+				<div class = "col-xs-3">
+					<h4 style="color:#ffffff">&</h4>
+				</div>
+				<div class = "col-xs-3">
+					<h4 style="color:#ffffff">a</h4>
+				</div>
+			</div>
+			<div class = "row hidden-xs">
+				<div class = "col-md-3">
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">1</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">e</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">&</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">a</h4>
+					</div>
+				</div>
+				<div class = "col-md-3">
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">2</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">e</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">&</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">a</h4>
+					</div>
+				</div>
+				<div class = "col-md-3">
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">3</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">e</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">&</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">a</h4>
+					</div>
+				</div>
+				<div class = "col-md-3">
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">4</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">e</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">&</h4>
+					</div>
+					<div class = "col-md-3">
+						<h4 style="color:#ffffff">a</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class = "col-md-1">
+			<h4><%=t('Hi-hats')%></h4>
+		</div>
+		<div class = "col-md-11">
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="0">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="1">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="2">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="3">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="4">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="5">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="6">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="7">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="8">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="9">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="10">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="11">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="12">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="13">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="14">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control hh_note" value="15">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class = "col-md-1">
+			<h4><%=t('Snare')%></h4>
+		</div>
+		<div class = "col-md-11">
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="0">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="1">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="2">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="3">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="4">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="5">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="6">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="7">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="8">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="9">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="10">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="11">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="12">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="13">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="14">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control sn_note" value="15">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class = "col-md-1">
+			<h4><%=t('Bass drum')%></h4>
+		</div>
+		<div class = "col-md-11">
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="0">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="1">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="2">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="3">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="4">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="5">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="6">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="7">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="8">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="9">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="10">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="11">
+				</div>
+			</div>
+			<div class = "col-xs-12 col-md-3">
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="12">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="13">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="14">
+				</div>
+				<div class = "col-xs-3">
+					<input type="checkbox" class="form-control bd_note" value="15">
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="col-md-4">
+			<input type="button" value="groove_1" class="btn btn-success col-xs-12 groove">
+		</div>
+		<div class="col-md-4">
+			<input type="button" value="groove_2" class="btn btn-default col-xs-12 groove">
+		</div>
+		<div class="col-md-4">
+			<input type="button" value="groove_3" class="btn btn-default col-xs-12 groove">
+		</div>
+	</div>
+	<div class="row">
+		<br/>
+		<input type="button" value="<%=t('Save groove')%>" class="btn btn-danger col-xs-offset-3 col-xs-6 save_groove">
+	</div>
+	<div class="row">
+		<label class="col-xs-offset-3 col-xs-6 btn-info save_notice" style="display:none;"><%="#{t('Save success')} !!"%></label>
+	</div>
+
+	<script>
+		// step 1 獲得 AudioContext
+		var compressor = null;
+		var reverb = null;
+		var delay = null;
+		var lowpassFilter = null;
+		var waveShaper = null;
+		var panner = null;
+		/*compressor = context.createDynamicsCompressor();
+		 reverb = context.createConvolver();
+		 delay = context.createDelay();
+		 lowpassFilter = context.createBiquadFilter();
+		 waveShaper = context.createWaveShaper();
+		 panner = context.createPanner();*/
+		<!--全域變數全部擺最上面比較安全-->
+		var context = null;
+		var midi_drum = null;
+		var groove_btns = null;
+		var current_groove_btn = null;
+		var volume_gains = null;
+		var ui_notes  = null;
+		var default_groove = null;
+		var sound_pool = new Object();
+		
+		function init() {
+			//1. get context
+			try {
+				// Fix up for prefixing
+				window.AudioContext = window.AudioContext || window.webkitAudioContext;
+				context = new AudioContext();
+			} catch(e) {
+				alert('Web Audio API is not supported in this browser');
+			}
+			
+			//2. load sound
+			initailize_sound_pool();
+			
+			//3. prepare cookie and default groove
+			create_default_groove();
+			
+			//4. create midi_drum engine
+			midi_drum = create_midi_drum(context);
+			
+			// 5. setup ui notes behavior
+			// ui_notes
+			initialize_ui_notes();
+			
+			//6. setup groove button behavior
+			// groove_btns & current_groove_btn
+			initialize_groove_list_buttons();
+			
+			//7. setup volume gains slider behavior
+			// volume_gains
+			initailize_volume_gains();
+			
+			//8.
+			sync_groove_with_cookie($(current_groove_btn).val());
+			
+			//9. 
+			initialize_control_ui();
+			
+			midi_drum.current_bpm = $('#bpm_value').val();
+			midi_drum.sound_pool = sound_pool;
+			midi_drum.volume_gains = volume_gains;
+		}
+
+		$(document).ready(function(){
+			if (typeof create_midi_drum == 'function') {
+				init(); 
+			}
+		});
+		
+		// step 2 利用ajax load wav
+		function load_sound(url, name) {
+			var request = new XMLHttpRequest();
+			request.open('GET', url, true);
+			request.responseType = 'arraybuffer';
+
+			// Decode asynchronously
+			request.onload = function() {
+				context.decodeAudioData(request.response, function(decodedData) {
+					sound_pool[name] = decodedData;
+				});
+			}
+			request.send();
+		}
+		
+		function initailize_sound_pool(){
+			load_sound("http://rock-click.com/audio/DrumVoice1/BassDrum.wav", "kick");
+			load_sound("http://rock-click.com/audio/DrumVoice1/Snare.wav", "snare");
+			load_sound("http://rock-click.com/audio/DrumVoice1/HiHatsHard.wav", "hh_o");
+			load_sound("http://rock-click.com/audio/DrumVoice1/HiHatsClose.wav", "hh_c");
+			load_sound("http://rock-click.com/audio/DrumVoice1/Empty.wav", "empty");
+		}
+		
+		function initailize_volume_gains(){
+			volume_gains = new Object();
+			volume_gains.hh = $('.hh_volume')[0];
+			volume_gains.sn = $('.sn_volume')[0];
+			volume_gains.bd = $('.bd_volume')[0];
+		}
+		
+		function create_default_groove(){
+			default_groove = {};
+			default_groove.hh_array = [0, 2, 4, 6, 8, 10, 12, 14];
+			default_groove.bd_array = [0, 8, 14];
+			default_groove.sn_array = [4, 12];
+			
+			// fill cookie
+			if ($.cookie('groove_1') == null) {
+				$.cookie('groove_1', JSON.stringify(default_groove));
+			}
+			if ($.cookie('groove_2') == null) {
+				$.cookie('groove_2', JSON.stringify(default_groove));
+			}
+			if ($.cookie('groove_3') == null) {
+				$.cookie('groove_3', JSON.stringify(default_groove));
+			}
+		}
+		
+		function initialize_ui_notes(){
+			ui_notes = new Object();
+			// get ui notes 
+			ui_notes.hh_notes = $('input.hh_note');
+			ui_notes.sn_notes = $('input.sn_note');
+			ui_notes.bd_notes = $('input.bd_note');
+			
+			// sync groove
+			ui_notes.hh_notes.change(function() {
+				sync_array(midi_drum.current_groove.hh_array, this);
+			});
+			ui_notes.sn_notes.change(function() {
+				sync_array(midi_drum.current_groove.sn_array, this);
+			});
+			ui_notes.bd_notes.change(function() {
+				sync_array(midi_drum.current_groove.bd_array, this);
+			});
+		}
+		
+		function initialize_groove_list_buttons(){
+			// cookie select ui button
+			groove_btns = $('.groove');
+			current_groove_btn = $('.groove')[0];
+			
+			groove_btns.click(function() {
+				current_groove_btn = this;
+				for(var i =0; i< groove_btns.length;i++) {
+					if (groove_btns[i] == this) {
+						var new_class = groove_btns[i].className.replace("btn-default", "btn-success");
+						groove_btns[i].className = new_class;
+						var key = $(groove_btns[i]).val();
+						sync_groove_with_cookie(key); 
+					}else{
+						var new_class = groove_btns[i].className.replace("btn-success", "btn-default");
+						groove_btns[i].className = new_class;
+					}
+				}
+			});
+			
+			$('.save_groove').click(function (){
+				$.cookie($(current_groove_btn).val(), JSON.stringify(midi_drum.current_groove));
+				$('.save_notice')[0].style.display = "";
+				var intervalID = setInterval(function () { 
+					$('.save_notice')[0].style.display = "none";
+					clearInterval(intervalID);
+				}, 1000);
+			});
+		}
+
+		function sync_groove_with_cookie(groove_name) {
+			try {
+				midi_drum.current_groove = JSON.parse($.cookie(groove_name))
+			} catch(e) {
+				midi_drum.current_groove = default_groove;
+			}
+			var current_groove = midi_drum.current_groove;
+			init_notes_dislay(current_groove.hh_array, ui_notes.hh_notes);
+			init_notes_dislay(current_groove.sn_array, ui_notes.sn_notes);
+			init_notes_dislay(current_groove.bd_array, ui_notes.bd_notes); 
+		}
+
+		function init_notes_dislay(record, notes) {
+			var notes_length = notes.length;
+			for (var i = 0; i < notes_length; i++){
+				$(notes[i]).prop('checked', false);
+			}
+			for (var i = 0; i < record.length; i++) {
+				var index = record[i];
+				if (index < notes_length) {
+					$(notes[index]).prop('checked', true);
+				}
+			}
+		}
+
+		function sync_array(note_array, checkbox) {
+			var value = parseInt($(checkbox).val());
+			if ($(checkbox).is(":checked")) {
+				note_array[note_array.length] = value;
+			} else {
+				var index = note_array.indexOf(value);
+				if (index > -1) {
+					note_array.splice(index, 1);
+				}
+			}
+		}
+
+		function initialize_control_ui(){
+			$('input.play_audio').click(function() {
+				if (!midi_drum.playing) {
+					midi_drum.play_all();
+					var new_class = this.className.replace("btn-info", "btn-danger");
+					this.className = new_class;
+					this.value = "<%=t('stop')%>";
+				} else {
+					var new_class = this.className.replace("btn-danger", "btn-info");
+					this.className = new_class;
+					this.value = "<%=t('play')%>";
+					midi_drum.stop_playing(true);
+				}
+			});
+			
+			$('#bpm_value').change(function() {
+				if (bpm_value.value == "") {
+					bpm_value.value = midi_drum.current_bpm
+				} else {
+					midi_drum.current_bpm = bpm_value.value;
+				}
+			});
+			
+			$('a').click(function() {
+				midi_drum.stop_playing(true);
+			});
+		}
+		
+		
+		/*window.onblur = function(){
+		 midi_drum.stop_playing(true);
+		 }
+		 window.onfocus = function(){
+		 if (!midi_drum.playing) {
+		 midi_drum.play_all();
+		 }
+		 }*/
+	</script>

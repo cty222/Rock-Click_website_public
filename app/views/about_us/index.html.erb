@@ -1,0 +1,45 @@
+<div class="container">
+	<%= render "about_us/lang/#{@languege}" %>
+
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-10">
+			<%= form_tag(controller: "about_us", action: "email_contact", method: "post") do %>
+			<fieldset>
+				<legend>
+					<%= t('Send email to us')%>:
+				</legend>
+				<div class="row">
+					<label class="col-xs-offset-1 col-xs-2"> <%= t('Your email')%>: </label>
+					<div class="col-xs-7">
+						<%= text_field_tag(:email, @last_record["email"], {class: "form-control", placeholder: t("email_placeholder")})%>
+					</div>
+					<br/>
+					<br/>
+				</div>
+				<div class="row">
+					<label class="col-xs-offset-1 col-xs-2"> <%= t('Subject') %>: </label>
+					<div class="col-xs-7">
+						<%= text_field_tag(:subject, @last_record["subject"], {class: "form-control", placeholder: t("subject_placeholder")})%>
+					</div>
+					<br/>
+					<br/>
+				</div>
+				<div class="row">
+					<label class="col-xs-offset-1 col-xs-2"> <%= t('Content') %>: </label>
+					<div class="col-xs-7">
+						<%= text_area(nil, :content, {rows: 10, class: "form-control", value: @last_record["content"], placeholder: t("content_placeholder")}) %>
+					</div>
+					<br/>
+				</div>
+				<div class="row">
+					<br/>
+					<div class="col-xs-offset-4 col-xs-4">
+						<%= submit_tag("send", {class:"btn btn-success btn-block"})%>
+					</div>
+				</div>
+				</div>
+			</fieldset>
+			<% end%>
+		</div>
+	</div>
+</div>

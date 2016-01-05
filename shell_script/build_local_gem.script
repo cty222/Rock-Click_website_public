@@ -1,0 +1,8 @@
+#!/bin/bash
+CURRENT_PATH=$(pwd);
+BASEDIR=$(dirname $0);
+GEM_FOLDER_PATH=${BASEDIR}/../gem_folder;
+cd ${GEM_FOLDER_PATH}/system_admin;
+gem build system_admin.gemspec;
+cd ${CURRENT_PATH};
+bundle update system_admin;

@@ -1,0 +1,4 @@
+rails console production
+RAILS_ENV=production rake db:migrate
+RAILS_ENV=production rake db:create
+@counter = SystemRecord.find_by(name: "access_counter").value

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+RED='\033[;31m'
+YELLOW='\033[;33m'
+NC='\033[0m'
+
+if [ $1 ] ;then
+  echo -e "${YELLOW}Please enter mysql root password:${NC}"
+  mysql -uroot -p rock_click < $1
+else
+  echo -e "${RED}Failed!!${NC}"
+  echo -e "Please using as folloing format:\n$0 [sql_file_name]"
+fi

@@ -1,0 +1,2 @@
+module AppDescriptionHelper
+end

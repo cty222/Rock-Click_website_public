@@ -1,0 +1,65 @@
+body
+{   
+    text-align:center;
+    color : #ffffff;
+    margin : 0px;
+    background-color: #000000;
+}
+
+#ManuIcon
+{
+    margin: 0px 0px -32px 0px;
+    width  : 80px;
+    height : 80px;
+}
+
+link {
+    display: block;
+    border: 0px;
+}
+
+.RedLine
+{
+    background-color: #ff0000;
+    height: 3px;
+    border: 0;
+}
+
+.ShortRedLine
+{
+    background-color: #ff0000;
+    height: 3px;
+    border: 0;
+    width: 80%;
+}
+
+.StopFloatDiv, .RedLine, .ShortRedLine
+{
+    clear:both;
+}
+
+.LanguageBtn
+{
+   font-size: 17px;
+   height: 38px;
+   width: 100px;
+}
+
+.LanguageBtnCh
+{
+   font-size:16px;
+   height: 38px;
+   width: 100px;
+}
+
+.MainImagesContent
+{
+    margin:10px 50px 10px 60px;
+    display:inline-table;
+}
+
+#MainTitle
+{
+    font-size: 25px;  
+}
+

@@ -1,0 +1,43 @@
+.AppImgTrueSize_4S
+{
+    width  : 320px;
+    height : 480px;
+}
+
+.AppImgTrueSize_5S
+{
+    width  : 320px;
+    height : 568px;
+}
+
+.AppImgMiddleSize_5S
+{
+    width  : 240px;
+    height : 426px; 
+}
+
+.AppImgSmallSize_5S
+{
+    width  : 160px;
+    height : 284px; 
+}
+
+.ImageWithTitle
+{
+    float: left;
+    width  : 160px;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 8px;
+    padding: 0px;
+}
+
+.ImageWithTitleTrueSize
+{
+    float: left;
+    width  : 320px;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 8px;
+    padding: 0px;
+}

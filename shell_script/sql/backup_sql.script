@@ -1,0 +1,8 @@
+#!/bin/bash
+BASEDIR=$(dirname $0)
+TODAY=$(date +"%Y%m%d")
+DIR=${BASEDIR}/../../sql_backup
+mkdir -p ${DIR}/production
+mkdir -p ${DIR}/development
+mysqldump --opt -uroot -p rock_click > ${DIR}/production/${TODAY}_rock_click_backup.sql
+mysqldump --opt -uroot -p rock_click_dev > ${DIR}/development/${TODAY}_rock_click_dev_backup.sql

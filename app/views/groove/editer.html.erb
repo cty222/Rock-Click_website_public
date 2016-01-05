@@ -1,0 +1,60 @@
+<div class="container-fluid">
+	<div class="row">
+		<!-- editer-->
+		<div class="col-xs-12 col-md-10">
+			<!--groove picture-->
+			<div class="col-xs-12">
+				<%= image_tag("/test_img/test_groove.png", {class:"col-xs-12"}) %> 
+				<br/> 
+			</div>
+			<div id="button_contain" class="col-xs-12">
+				<hr/>
+				<%= render "button_contain"%>
+			</div>
+		</div>
+		<!-- 右方選取列-->
+		<div class="col-xs-12 col-md-2">
+			<div>
+				<p data-toggle="collapse" href="#groove_list" aria-expanded="false" aria-controls="groove_list">
+	 		 		<%= "groove list"%><span class="caret"></span> 
+				</p>					
+			</div>
+			<div class="collapse in" id="groove_list">
+				<% @grooves.each_with_index do |groove, index|%>
+					<%if groove == @current_groove%>
+						<p class="curent_groove"><%="##{index + 1}. #{groove.name}"%></p>
+					<%else%>
+						<p class="other_groove" groove_id="<%="#{groove.id}"%>"><%="##{index + 1}. #{groove.name}"%></p>
+					<%end%>
+				<%end%>
+			</div>
+			<hr/>
+		</div>
+	</div>
+</div>
+
+<script>
+var other_grooves = $('.other_groove').click(function(){
+	var groove_id = $(this).attr('groove_id');
+	load_groove(groove_id);
+});
+
+function load_groove(groove_id) {
+	//ajaxImg = document.getElementById('ajaxImg'+cart_itemId);
+	var inputData = new Object();
+	inputData.groove_id = groove_id;
+	inputData.callback = function (responseText){
+		updateCallback = function (responseText){
+			alert(responseText);
+		}
+		var errorCallBack = function(){ 
+			alert("修改失敗!!");
+		}
+		preHandler(responseText, updateCallback, errorCallBack);
+		//ajaxImg.style.display = "none";
+	}
+
+	//ajaxImg.style.display = "inline";
+	fill_in_ajax_info(inputData, "/groove/load_groove");
+}
+</script>

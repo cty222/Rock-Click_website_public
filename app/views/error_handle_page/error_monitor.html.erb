@@ -1,0 +1,8 @@
+<h3>Error code: <%= @date%></h3>
+<%= form_tag("/error_view") do%>
+	<%= datetime_field_tag(:date, @date)%><%= submit_tag 'send' %><br/>
+	<b>( mm_dd_yyyy )</b>
+<%end%>
+<hr class="RedLine"/>
+<pre><%= @error_log%></pre>
+
